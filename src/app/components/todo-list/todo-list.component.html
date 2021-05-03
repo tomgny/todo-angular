@@ -1,0 +1,24 @@
+<div class="d-inline-flex">
+    <ul class="list-group p-2">
+        <ng-container *ngFor="let item of items; let i = index">
+            <app-todo
+                *ngIf="item.status !== 'Done'"
+                [currentStatus]="item.status"
+                [text]="item.text"
+                (editItemStatus)="editStatus($event, i)"
+                (deleteItem)="deleteTask(i)"
+            ></app-todo>
+        </ng-container>
+    </ul>
+    <ul class="list-group p-2">
+        <ng-container *ngFor="let item of items; let i = index">
+            <app-todo
+                *ngIf="item.status === 'Done'"
+                [currentStatus]="item.status"
+                [text]="item.text"
+                (editItemStatus)="editStatus($event, i)"
+                (deleteItem)="deleteTask(i)"
+            ></app-todo>
+        </ng-container>
+    </ul>
+</div>

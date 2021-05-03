@@ -1,0 +1,14 @@
+<div>
+    <p>New ToDo:</p>
+    <textarea
+        id="todo"
+        name="todo"
+        placeholder="Enter new ToDo here..."
+        style="white-space: pre"
+        class="form-control"
+        [(ngModel)]="taskText"
+    ></textarea>
+    <button class="btn btn-primary my-2" (click)="addNewTodo(taskText)">
+        Add ToDo
+    </button>
+</div>

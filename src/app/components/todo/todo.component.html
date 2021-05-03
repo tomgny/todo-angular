@@ -1,0 +1,26 @@
+<li class="list-group-item d-flex align-items-center mb-2">
+    <div
+        class="justify-content-start text-break"
+        [ngStyle]="{
+            'text-decoration':
+                currentStatus === 'Done' ? 'line-through' : 'none'
+        }"
+    >
+        {{ text }}
+    </div>
+    <div class="d-inline-flex ml-auto p-2">
+        <select
+            id="task"
+            class="form-control ml-3 w-auto"
+            [ngModel]="currentStatus"
+            (ngModelChange)="changeStatus($event)"
+        >
+            <option *ngFor="let status of statuses">
+                {{ status }}
+            </option>
+        </select>
+        <button class="btn btn-outline-danger ml-2" (click)="remove()"
+            >x</button
+        >
+    </div>
+</li>

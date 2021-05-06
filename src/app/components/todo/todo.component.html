@@ -1,6 +1,6 @@
 <li class="list-group-item d-flex align-items-center mb-2">
     <div
-        class="justify-content-start text-break"
+        class="justify-content-start todo-text"
         [ngStyle]="{
             'text-decoration':
                 currentStatus === 'Done' ? 'line-through' : 'none'
@@ -8,7 +8,7 @@
     >
         {{ text }}
     </div>
-    <div class="d-inline-flex ml-auto p-2">
+    <div class="d-inline-flex ml-auto p-1">
         <select
             id="task"
             class="form-control ml-3 w-auto"
@@ -19,8 +19,15 @@
                 {{ status }}
             </option>
         </select>
-        <button class="btn btn-outline-danger ml-2" (click)="remove()"
-            >x</button
+        <button
+            mat-mini-fab
+            color="warn"
+            class="ml-3"
+            (click)="remove()"
+            aria-label="Delete item"
         >
+            <mat-icon>delete</mat-icon>
+        </button>
+        <!-- <button mat-fab color="primary" (click)="remove()">x</button> -->
     </div>
 </li>

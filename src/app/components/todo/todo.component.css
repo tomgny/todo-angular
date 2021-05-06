@@ -1,0 +1,4 @@
+.todo-text {
+    max-width: 15em;
+    overflow-wrap: break-word;
+}

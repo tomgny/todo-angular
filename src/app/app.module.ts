@@ -7,6 +7,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { NewTodoComponent } from './components/new-todo/new-todo.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
     declarations: [
@@ -16,7 +19,13 @@ import { TodoComponent } from './components/todo/todo.component';
         TodoComponent,
         TodoListComponent
     ],
-    imports: [BrowserModule, FormsModule],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatIconModule
+    ],
     providers: [],
     bootstrap: [AppComponent]
 })
